@@ -2,6 +2,9 @@ import React from 'react'
 import {useState} from 'react'
 import TaskData from './components/TaskData';
 import Tasks from "./components/Tasks";
+import Card from "./components/shared/Card";
+import AddTask from "./components/AddTask";
+import {v4 as uuidv4 } from "uuid"
 
 const App = () => {
 
@@ -17,14 +20,21 @@ const App = () => {
         task.id === id ? { ...task, checked: !task.checked} : task
       )
     );
+  };
+  const addTask = (newTask) => {
+    newTask.id = uuidv4();
+    setTaskList([newTask, ...taskList]);
   }
 
   return (
     <div className = 'container'>
         <h1>Welcome to Task Manager</h1>
-      <Tasks taskList = {taskList}
+        <AddTask handleAdd = {addTask}/>
+      <Tasks
+      taskList = {taskList}
       handleDelete = {deleteTask}
-      handleCheck = {checkTask} />
+      handleCheck = {checkTask} 
+      />
   </div>
   )
 }
