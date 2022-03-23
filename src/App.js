@@ -1,29 +1,32 @@
 import React from 'react'
-import TaskForm from './components/TaskForm'
 import {useState} from 'react'
-import TaskList from './components/TaskList'
+import TaskData from './components/TaskData';
+import Tasks from "./components/Tasks";
 
 const App = () => {
 
-  const [input, setInput] = useState('');
-  const [tasks, setTasks] = useState([]);
+  const [taskList, setTaskList] = useState(TaskData);
 
+  const deleteTask = (id) => {
+    setTaskList(taskList.filter((task) => task.id !== id));
+  }
+
+  const checkTask = (id) => {
+    setTaskList(
+      taskList.map((task) => 
+        task.id === id ? { ...task, checked: !task.checked} : task
+      )
+    );
+  }
 
   return (
     <div className = 'container'>
-      <div className = 'app-wrapper'>
-        <div>
-          <TaskForm 
-          input = {input}
-          setInput = {setInput}
-          tasks = {tasks}
-          setTasks = {setTasks}
-          />
-        </div>
-    </div>
-      <TaskList tasks = {tasks} setTasks = {setTasks} />
+        <h1>Welcome to Task Manager</h1>
+      <Tasks taskList = {taskList}
+      handleDelete = {deleteTask}
+      handleCheck = {checkTask} />
   </div>
   )
 }
 
-export default App
+export default App;
