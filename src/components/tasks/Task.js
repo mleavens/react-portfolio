@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FaTrashAlt } from 'react-icons/fa';
-import Card from "./shared/Card"
+import Card from "../shared/Card"
 
 
 export default function Task({ id, title, description, checked, handleDelete, handleCheck }){
@@ -23,8 +23,4 @@ export default function Task({ id, title, description, checked, handleDelete, ha
     )
 }
 
-Task.propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
-    id: PropTypes.string,
-}
+

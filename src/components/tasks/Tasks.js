@@ -1,5 +1,5 @@
 import React from "react";
-import Task from "./Task";
+import Task from "../tasks/Task";
 
 
 export default function Tasks({ taskList, handleDelete, handleCheck }){
@@ -21,7 +21,6 @@ export default function Tasks({ taskList, handleDelete, handleCheck }){
                     checked = {task.checked}
                     handleCheck = {handleCheck} />
             ))}
-            <button className = "btn">Add Task</button>
             <br></br>
         </span>
     );

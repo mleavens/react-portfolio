@@ -1,42 +1,20 @@
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 import React from 'react'
-import {useState} from 'react'
-import TaskData from './components/TaskData';
-import Tasks from "./components/Tasks";
-import Card from "./components/shared/Card";
-import AddTask from "./components/AddTask";
-import {v4 as uuidv4 } from "uuid"
+import AboutPage from './components/pages/AboutPage';
+import HomePage from "./components/pages/HomePage";
+import Users from "./components/User/Users";
+
 
 const App = () => {
-
-  const [taskList, setTaskList] = useState(TaskData);
-
-  const deleteTask = (id) => {
-    setTaskList(taskList.filter((task) => task.id !== id));
-  }
-
-  const checkTask = (id) => {
-    setTaskList(
-      taskList.map((task) => 
-        task.id === id ? { ...task, checked: !task.checked} : task
-      )
-    );
-  };
-  const addTask = (newTask) => {
-    newTask.id = uuidv4();
-    setTaskList([newTask, ...taskList]);
-  }
-
   return (
-    <div className = 'container'>
-        <h1>Welcome to Task Manager</h1>
-        <AddTask handleAdd = {addTask}/>
-      <Tasks
-      taskList = {taskList}
-      handleDelete = {deleteTask}
-      handleCheck = {checkTask} 
-      />
-  </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path = "/" element = {<HomePage />} />
+        <Route path = "/about" element = {<AboutPage />} />
+        <Route path = "/users/:id/:name" element = {<Users />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App;
+export default App; 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from "./shared/Card";
+import Card from "../shared/Card";
 import { useState } from "react";
 
 export default function AddTask({ handleAdd }) {
@@ -27,15 +27,15 @@ export default function AddTask({ handleAdd }) {
 
     return (
         <Card>
-            <form onSubmit = {handleSubmit}>
-                <h2> Add a task </h2>
+            <form onSubmit = {handleSubmit} className = "form">
+                <h2 className = "add-task-title"> Add a task </h2>
                 <div className = "input-box">
-                    <input 
+                    <input className = "input"
                     onChange = {handleTitleChange} 
                     type = "text" 
                     placeholder = "Task title" 
                     value = {title}/>
-                    <input 
+                    <input className = "input"
                     onChange = {handleDescriptionChange}
                     type = "text" 
                     placeholder = "Task description" 
