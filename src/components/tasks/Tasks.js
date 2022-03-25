@@ -1,8 +1,11 @@
 import React from "react";
+import { useState, useContext } from "react";
+import TaskContext from "../context/TaskContext"
 import Task from "../tasks/Task";
 
 
 export default function Tasks({ taskList, handleDelete, handleCheck }){
+    // const { taskList } = useContext(TaskContext);
 
     if(!taskList || taskList.length === 0){
         return <p>No tasks today!</p>;
