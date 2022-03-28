@@ -48,6 +48,7 @@ body {
   padding: 40px 50px;
   margin: 20px 0;
   position: relative;
+  z-index: 900;
 }
 
 .text-display {
@@ -142,4 +143,140 @@ body {
   justify-content: space-evenly;
   color: #fff;
   text-decoration: none;
+}
+
+.about {
+  width: 50%;
+  margin: 40%;
+}
+
+.navbar {
+  background-color: black;
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.nav-menu {
+  background-color: black;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  z-index: 950;
+}
+
+.nav-menu.active{
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.nav-text a:hover {
+  background-color: #1a83ff;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: black;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+span {
+  margin-left: 16px;
+}
+
+.home-h1 {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 5em;
+  letter-spacing: -2px;
+  border-bottom: 2px solid black;
+  text-transform: uppercase;
+  color: rgb(7, 40, 102);
+  text-align: center;
+  border: 3px solid white;
+  border-top: none;
+}
+
+.home-para-1 {
+  font-family: Georgia, sans-serif;
+  text-align: center;
+  font-size: 32px;
+}
+
+.home-para-2 {
+  font-family: Georgia, sans-serif;
+  text-align: center;
+  font-size: 26px;
+}
+
+.home-para-2 a{
+  text-decoration: none;
+  color:  rgb(7, 40, 102);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.home-para-2 a:hover{
+  color: brown;
+}
+
+.about-link {
+  font-family: Georgia, sans-serif;
+  text-align: center;
+  font-size: 26px;
+}
+
+.about-link a{
+  text-decoration: none;
+  color:  rgb(7, 40, 102);
+  cursor: pointer;
+}
+
+.about-link a:hover{
+  color: brown;
+}
+
+.about-h1 {
+  font-family: Georgia, sans-serif;
+  text-align: center;
+  font-size: 3em;
 }
