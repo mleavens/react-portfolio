@@ -1,10 +1,22 @@
 import React from 'react';
 import Card from "../shared/Card";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+import TaskContext from "../context/TaskContext";
+
+
 
 export default function AddTask({ handleAdd }) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    
+    const { addTask, updateTask, taskEdit } = useContext(TaskContext);
+
+    useEffect(() => {
+        if(taskEdit.edit === true){
+            setTitle(taskEdit.task.title);
+            setDescription(taskEdit.task.description);
+        }
+    }, [taskEdit]);
 
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
@@ -16,10 +28,14 @@ export default function AddTask({ handleAdd }) {
         e.preventDefault();
         if(title.length !==0 && description.trim().length > 8){
             const newTask = {
-                title: title,
-                description: description
+                title,
+                description,
             };
-            handleAdd(newTask);
+        if(taskEdit.edit === true){
+            updateTask(taskEdit.task.id, newTask)
+        }else{
+            addTask(newTask)
+        };
             setTitle("");
             setDescription("");
         }
