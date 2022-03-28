@@ -13,7 +13,7 @@ export default function Tasks(){
     const result = taskList.filter((task) => task.title.toLowerCase().includes(search.toLowerCase()));
 
     if(!result || result.length === 0){
-        return <p>No tasks today!</p>;
+        return <p className = "no-tasks">No tasks today!</p>;
     };
 
 

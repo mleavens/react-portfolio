@@ -162,6 +162,7 @@ body {
   margin-left: 2rem;
   font-size: 2rem;
   background: none;
+  color: white;
 }
 
 .nav-menu {
@@ -239,13 +240,25 @@ span {
 .home-para-1 {
   font-family: Georgia, sans-serif;
   text-align: center;
-  font-size: 32px;
+  font-size: 36px;
+}
+
+.home-para-1 a{
+  text-decoration: none;
+  color:  rgb(7, 40, 102);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.home-para-1 a:hover{
+  color: brown;
 }
 
 .home-para-2 {
   font-family: Georgia, sans-serif;
   text-align: center;
   font-size: 26px;
+  margin-top: 28px;
 }
 
 .home-para-2 a{
@@ -279,4 +292,9 @@ span {
   font-family: Georgia, sans-serif;
   text-align: center;
   font-size: 3em;
+}
+
+.no-tasks {
+  font-size: 26px;
+  text-align: center;
 }
