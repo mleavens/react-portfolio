@@ -10,8 +10,8 @@ export default function HomePage() {
         <Header />
         <div className = 'container'>
         <Card>
-                <h1 className = 'home-h1'>Task Manager</h1>
-                <p className = 'home-para-1'>Enjoy managing your tasks
+                <h1 className = 'home-h1'>Megan Leavens</h1>
+                <p className = 'home-para-1'>
                     <Link to= "/tasklist"> here!</Link>
                 </p>
                     <p className = "home-para-2">
